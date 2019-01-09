@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/GridLayout.dart';
 
 class SecondScreen extends StatefulWidget {
   @override
@@ -16,13 +17,9 @@ class _SecondScreenState extends State<SecondScreen> {
             title: Text("Element $position"),
             subtitle: Text("Subtitle $position"),
             onTap: (){
-              showDialog(
-                  context: context,
-                  builder: (c) {
-                    return AlertDialog(content:Text("Has pulsado el item $position"),
-                    );
-                  }
-              );
+              Navigator.of(context).push(MaterialPageRoute(builder: (c) {
+                return GridLaouy(position);
+              }));
             },
           );
         },
